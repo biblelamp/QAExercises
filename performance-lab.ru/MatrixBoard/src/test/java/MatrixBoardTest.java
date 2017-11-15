@@ -12,49 +12,49 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class MatrixBoardTest {
-    WebDriver driver; //Поле для хранения нашего драйвера
-    WebDriverWait wait; //поле для хранияния нашего Explicit Wait
+    WebDriver driver; //РџРѕР»Рµ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РЅР°С€РµРіРѕ РґСЂР°Р№РІРµСЂР°
+    WebDriverWait wait; //РїРѕР»Рµ РґР»СЏ С…СЂР°РЅРёСЏРЅРёСЏ РЅР°С€РµРіРѕ Explicit Wait
 
     public static final String USER_NAME = "user";
     public static final String PASSWORD = "user";
 
-    @Before //Аннотация Junit. Говорит, что метод должен запускаться каждый раз после создания экземпляра класса, перед всеми тестами
+    @Before //РђРЅРЅРѕС‚Р°С†РёСЏ Junit. Р“РѕРІРѕСЂРёС‚, С‡С‚Рѕ РјРµС‚РѕРґ РґРѕР»Р¶РµРЅ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ РєР°Р¶РґС‹Р№ СЂР°Р· РїРѕСЃР»Рµ СЃРѕР·РґР°РЅРёСЏ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°, РїРµСЂРµРґ РІСЃРµРјРё С‚РµСЃС‚Р°РјРё
     public void setUp() {
-        //Устанавливаем System Property, чтобы наше приложени смогло найти драйвер
-        System.setProperty("webdriver.gecko.driver", "C:\\share\\drivers\\geckodriver.exe");
-        //Инициализируем драйвер
+        //РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј System Property, С‡С‚РѕР±С‹ РЅР°С€Рµ РїСЂРёР»РѕР¶РµРЅРё СЃРјРѕРіР»Рѕ РЅР°Р№С‚Рё РґСЂР°Р№РІРµСЂ
+        System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Java\\geckodriver.exe");
+        //РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РґСЂР°Р№РІРµСЂ
         driver = new FirefoxDriver();
-        //Инициализируем Implicit Wait
+        //РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј Implicit Wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //инициализируем Explicit Wait
+        //РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј Explicit Wait
         wait = new WebDriverWait(driver, 10);
     }
 
-    @After //Аннотация Junit. Говорит, что метод должен запускаться каждый раз после всех тестов
+    @After //РђРЅРЅРѕС‚Р°С†РёСЏ Junit. Р“РѕРІРѕСЂРёС‚, С‡С‚Рѕ РјРµС‚РѕРґ РґРѕР»Р¶РµРЅ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ РєР°Р¶РґС‹Р№ СЂР°Р· РїРѕСЃР»Рµ РІСЃРµС… С‚РµСЃС‚РѕРІ
     public void tearDown() {
         driver.quit();
     }
 
-    @Test //Аннотация Junit. Говорит, что этот метод - тестовый
+    @Test //РђРЅРЅРѕС‚Р°С†РёСЏ Junit. Р“РѕРІРѕСЂРёС‚, С‡С‚Рѕ СЌС‚РѕС‚ РјРµС‚РѕРґ - С‚РµСЃС‚РѕРІС‹Р№
     public void loginTest(){
-        driver.navigate().to("http://at.pflb.ru/matrixboard2/"); //перейти по URL
-        //Найдем и сохраним элементы
+        driver.navigate().to("http://at.pflb.ru/matrixboard2/"); //РїРµСЂРµР№С‚Рё РїРѕ URL
+        //РќР°Р№РґРµРј Рё СЃРѕС…СЂР°РЅРёРј СЌР»РµРјРµРЅС‚С‹
         WebElement loginField = driver.findElement(By.id("login-username"));
         WebElement passwordField = driver.findElement(By.id("login-password"));
         WebElement submitBtn = driver.findElement(By.id("login-button"));
 
-        //Заполним поля текстом
+        //Р—Р°РїРѕР»РЅРёРј РїРѕР»СЏ С‚РµРєСЃС‚РѕРј
         loginField.sendKeys(USER_NAME);
         passwordField.sendKeys(PASSWORD);
 
-        //отправим форму
+        //РѕС‚РїСЂР°РІРёРј С„РѕСЂРјСѓ
         submitBtn.click();
 
-        //В данной ситуации не нужны. Добавлены в качестве примера использования
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#profile span"))); //подождать пока элемент появиться на странице
-        wait.until((d) -> {return d.findElement(By.cssSelector("#profile span")).isDisplayed();}); //пример собственной реализации ExpectedCondition. Ждем пока выражение внутри лямбды не вернет нам true (но не больше таймаута)
+        //Р’ РґР°РЅРЅРѕР№ СЃРёС‚СѓР°С†РёРё РЅРµ РЅСѓР¶РЅС‹. Р”РѕР±Р°РІР»РµРЅС‹ РІ РєР°С‡РµСЃС‚РІРµ РїСЂРёРјРµСЂР° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#profile span"))); //РїРѕРґРѕР¶РґР°С‚СЊ РїРѕРєР° СЌР»РµРјРµРЅС‚ РїРѕСЏРІРёС‚СЊСЃСЏ РЅР° СЃС‚СЂР°РЅРёС†Рµ
+        wait.until((d) -> {return d.findElement(By.cssSelector("#profile span")).isDisplayed();}); //РїСЂРёРјРµСЂ СЃРѕР±СЃС‚РІРµРЅРЅРѕР№ СЂРµР°Р»РёР·Р°С†РёРё ExpectedCondition. Р–РґРµРј РїРѕРєР° РІС‹СЂР°Р¶РµРЅРёРµ РІРЅСѓС‚СЂРё Р»СЏРјР±РґС‹ РЅРµ РІРµСЂРЅРµС‚ РЅР°Рј true (РЅРѕ РЅРµ Р±РѕР»СЊС€Рµ С‚Р°Р№РјР°СѓС‚Р°)
 
-        WebElement usernameContainer = driver.findElement(By.cssSelector("#profile span")); //найдем элемент
-        Assert.assertEquals(USER_NAME, usernameContainer.getText()); //проверим, что текст в найденном элементе совпадает с ожидаемым.
+        WebElement usernameContainer = driver.findElement(By.cssSelector("#profile span")); //РЅР°Р№РґРµРј СЌР»РµРјРµРЅС‚
+        Assert.assertEquals(USER_NAME, usernameContainer.getText()); //РїСЂРѕРІРµСЂРёРј, С‡С‚Рѕ С‚РµРєСЃС‚ РІ РЅР°Р№РґРµРЅРЅРѕРј СЌР»РµРјРµРЅС‚Рµ СЃРѕРІРїР°РґР°РµС‚ СЃ РѕР¶РёРґР°РµРјС‹Рј.
     }
 }
