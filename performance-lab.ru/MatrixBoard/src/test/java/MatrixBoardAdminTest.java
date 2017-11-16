@@ -1,4 +1,5 @@
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -46,11 +47,7 @@ public class MatrixBoardAdminTest {
         passwordField.sendKeys(PASSWORD);
         submitBtn.click();
 
-        WebElement adduserButton = driver.findElement(By.id("add-person"));
-
-        if (adduserButton.isDisplayed() == true)
-            System.out.println("I have admin privilege =)");
-        else
-            System.out.println("I do not have admin privilege =(");
+        WebElement btnAddUser = driver.findElement(By.id("add-person"));
+        Assert.assertEquals(true, btnAddUser.isDisplayed());
     }
 }
