@@ -3,14 +3,13 @@ import com.pflb.learning.pages.LoginPage;
 import com.pflb.learning.pages.MainPage;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class MatrixBoardTest {
-    static WebDriver driver; //Поле для хранения нашего драйвера
-    static WebDriverWait wait; //поле для хранияния нашего Explicit Wait
+    static WebDriver driver;   // поле для хранения нашего драйвера
+    static WebDriverWait wait; // поле для хранияния нашего Explicit Wait
 
     public static final String USER_NAME = "user";
     public static final String PASSWORD = "user";
@@ -18,7 +17,7 @@ public class MatrixBoardTest {
     @BeforeClass//Аннотация Junit. Говорит, что метод должен запускаться каждый раз после создания экземпляра класса, перед всеми тестами
     public static void setUp() {
         //Устанавливаем System Property, чтобы наше приложени смогло найти драйвер
-        System.setProperty("webdriver.gecko.driver", "C:\\projects\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Java\\geckodriver.exe");
         //Инициализируем драйвер
 //        driver = new FirefoxDriver();
         driver = DriverManager.getDriver();
