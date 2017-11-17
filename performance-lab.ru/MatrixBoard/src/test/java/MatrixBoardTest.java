@@ -1,66 +1,83 @@
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.By;
+import com.pflb.learning.helpers.DriverManager;
+import com.pflb.learning.pages.LoginPage;
+import com.pflb.learning.pages.MainPage;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class MatrixBoardTest {
-    WebDriver driver;   // поле для хранения нашего драйвера
-    WebDriverWait wait; // поле для хранияния нашего Explicit Wait
+    static WebDriver driver; //РџРѕР»Рµ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РЅР°С€РµРіРѕ РґСЂР°Р№РІРµСЂР°
+    static WebDriverWait wait; //РїРѕР»Рµ РґР»СЏ С…СЂР°РЅРёСЏРЅРёСЏ РЅР°С€РµРіРѕ Explicit Wait
 
     public static final String USER_NAME = "user";
     public static final String PASSWORD = "user";
 
-    @Before // аннотация Junit. Говорит, что метод должен запускаться каждый раз после создания экземпляра класса, перед всеми тестами
-    public void setUp() {
-        // устанавливаем System Property, чтобы наше приложени смогло найти драйвер
-        // драйвер загружаем по адресу https://github.com/mozilla/geckodriver/releases
-        System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Java\\geckodriver.exe");
-
-        // инициализируем драйвер
-        driver = new FirefoxDriver();
-
-        // инициализируем Implicit Wait
+    @BeforeClass//РђРЅРЅРѕС‚Р°С†РёСЏ Junit. Р“РѕРІРѕСЂРёС‚, С‡С‚Рѕ РјРµС‚РѕРґ РґРѕР»Р¶РµРЅ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ РєР°Р¶РґС‹Р№ СЂР°Р· РїРѕСЃР»Рµ СЃРѕР·РґР°РЅРёСЏ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°, РїРµСЂРµРґ РІСЃРµРјРё С‚РµСЃС‚Р°РјРё
+    public static void setUp() {
+        //РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј System Property, С‡С‚РѕР±С‹ РЅР°С€Рµ РїСЂРёР»РѕР¶РµРЅРё СЃРјРѕРіР»Рѕ РЅР°Р№С‚Рё РґСЂР°Р№РІРµСЂ
+        System.setProperty("webdriver.gecko.driver", "C:\\projects\\geckodriver.exe");
+        //РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РґСЂР°Р№РІРµСЂ
+//        driver = new FirefoxDriver();
+        driver = DriverManager.getDriver();
+        //РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј Implicit Wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        // инициализируем Explicit Wait
+        //РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј Explicit Wait
         wait = new WebDriverWait(driver, 10);
     }
 
-    @After // аннотация Junit. Говорит, что метод должен запускаться каждый раз после всех тестов
-    public void tearDown() {
-        driver.quit();
+    @AfterClass //РђРЅРЅРѕС‚Р°С†РёСЏ Junit. Р“РѕРІРѕСЂРёС‚, С‡С‚Рѕ РјРµС‚РѕРґ РґРѕР»Р¶РµРЅ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ РєР°Р¶РґС‹Р№ СЂР°Р· РїРѕСЃР»Рµ РІСЃРµС… С‚РµСЃС‚РѕРІ
+    public static void tearDown() {
+        DriverManager.getDriver().quit();
     }
 
-    @Test // аннотация Junit. Говорит, что этот метод - тестовый
-    public void loginTest(){
+//    @Test //РђРЅРЅРѕС‚Р°С†РёСЏ Junit. Р“РѕРІРѕСЂРёС‚, С‡С‚Рѕ СЌС‚РѕС‚ РјРµС‚РѕРґ - С‚РµСЃС‚РѕРІС‹Р№
+//    public void loginTest(){
+//        driver.navigate().to("http://at.pflb.ru/matrixboard2/"); //РїРµСЂРµР№С‚Рё РїРѕ URL
+//        //РќР°Р№РґРµРј Рё СЃРѕС…СЂР°РЅРёРј СЌР»РµРјРµРЅС‚С‹
+//        WebElement loginField = driver.findElement(By.id("login-username"));
+//        WebElement passwordField = driver.findElement(By.id("login-password"));
+//        WebElement submitBtn = driver.findElement(By.id("login-button"));
+//
+//        //Р—Р°РїРѕР»РЅРёРј РїРѕР»СЏ С‚РµРєСЃС‚РѕРј
+//        loginField.sendKeys(USER_NAME);
+//        passwordField.sendKeys(PASSWORD);
+//
+//        //РѕС‚РїСЂР°РІРёРј С„РѕСЂРјСѓ
+//        submitBtn.click();
+//
+//        //Р’ РґР°РЅРЅРѕР№ СЃРёС‚СѓР°С†РёРё РЅРµ РЅСѓР¶РЅС‹. Р”РѕР±Р°РІР»РµРЅС‹ РІ РєР°С‡РµСЃС‚РІРµ РїСЂРёРјРµСЂР° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#profile span"))); //РїРѕРґРѕР¶РґР°С‚СЊ РїРѕРєР° СЌР»РµРјРµРЅС‚ РїРѕСЏРІРёС‚СЊСЃСЏ РЅР° СЃС‚СЂР°РЅРёС†Рµ
+//        wait.until((d) -> {return d.findElement(By.cssSelector("#profile span")).isDisplayed();}); //РїСЂРёРјРµСЂ СЃРѕР±СЃС‚РІРµРЅРЅРѕР№ СЂРµР°Р»РёР·Р°С†РёРё ExpectedCondition. Р–РґРµРј РїРѕРєР° РІС‹СЂР°Р¶РµРЅРёРµ РІРЅСѓС‚СЂРё Р»СЏРјР±РґС‹ РЅРµ РІРµСЂРЅРµС‚ РЅР°Рј true (РЅРѕ РЅРµ Р±РѕР»СЊС€Рµ С‚Р°Р№РјР°СѓС‚Р°)
+//
+//        WebElement usernameContainer = driver.findElement(By.cssSelector("#profile span")); //РЅР°Р№РґРµРј СЌР»РµРјРµРЅС‚
+//        Assert.assertEquals(USER_NAME, usernameContainer.getText()); //РїСЂРѕРІРµСЂРёРј, С‡С‚Рѕ С‚РµРєСЃС‚ РІ РЅР°Р№РґРµРЅРЅРѕРј СЌР»РµРјРµРЅС‚Рµ СЃРѕРІРїР°РґР°РµС‚ СЃ РѕР¶РёРґР°РµРјС‹Рј.
+//    }
 
-        driver.navigate().to("http://at.pflb.ru/matrixboard2/"); // перейти по URL
+    @Test
+    public void negativeLoginTest(){
+        LoginPage loginPage = new LoginPage(); //СЃРѕР·РґР°РµРј СЌРєР·РµРјРїР»СЏСЂ LoginPage
 
-        // найдем и сохраним элементы
-        WebElement loginField = driver.findElement(By.id("login-username"));
-        WebElement passwordField = driver.findElement(By.id("login-password"));
-        WebElement submitBtn = driver.findElement(By.id("login-button"));
+        //РѕСЃС‚Р°Р»СЊРЅС‹Рµ С€Р°РіРё РїСЂРѕСЃС‚Рѕ РєРѕРјР±РёРЅРёСЂСѓРµРј РІ С†РµРїРѕС‡РєСѓ
+        loginPage.load()
+                .fillLoginField("user")
+                .fillPasswordField("asd")
+                .submit();
+        //Assert.assertTrue(loginPage.isErrorMessageVisible());
+        Assert.assertTrue("Error message invisible!!!111", loginPage.isErrorMessageVisible());
+    }
 
-        // заполним поля
-        loginField.sendKeys(USER_NAME);
-        passwordField.sendKeys(PASSWORD);
+    @Test
+    public void successLoginTest(){
+        LoginPage loginPage = new LoginPage();
+        loginPage.load()
+                .fillLoginField("user")
+                .fillPasswordField("user")
+                .submit();
 
-        // отправим форму
-        submitBtn.click();
-
-        // в данной ситуации не нужны. Добавлены в качестве примера использования
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#profile span"))); // подождать пока элемент появится на странице
-        wait.until((d) -> {return d.findElement(By.cssSelector("#profile span")).isDisplayed();}); // пример собственной реализации ExpectedCondition. Ждем пока выражение внутри лямбды не вернет нам true (но не больше таймаута)
-
-        WebElement usernameContainer = driver.findElement(By.cssSelector("#profile span")); // найдем элемент
-        Assert.assertEquals(USER_NAME, usernameContainer.getText()); // проверим, что текст в найденном элементе совпадает с ожидаемым.
+        MainPage mainPage = new MainPage();
+        Assert.assertEquals("user", mainPage.getUsername());
     }
 }
