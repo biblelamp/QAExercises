@@ -51,4 +51,7 @@ public class LognPageSteps {
     public void checkForErrorMsg() {
         Assert.assertTrue(loginPage.isErrorMessageVisible());
     }
+
+    @And("^user logging out$")
+    public void logout() {mainPage.logout();}
 }
