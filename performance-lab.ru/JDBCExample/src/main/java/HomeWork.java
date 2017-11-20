@@ -27,12 +27,19 @@ public class HomeWork {
                 dbName + " successfully");
 
         // added records if need
-        ResultSet rs = stmt.executeQuery( "SELECT * FROM " + tableName + ";" );
+        ResultSet rs = stmt.executeQuery("SELECT * FROM " + tableName + ";");
         if (!rs.next()) {
-            stmt.executeUpdate("INSERT INTO " + tableName +
-                    " (login, password, role) VALUES ('mike', 'qwerty', 'user');");
-            stmt.executeUpdate("INSERT INTO " + tableName +
-                    " (login, password, role) VALUES ('like', 'asdfg', 'administrator');");
+            // using PreparedStatement to protect against sql injections
+            PreparedStatement pstmt = connect.prepareStatement("INSERT INTO " + tableName +
+                    " (login, password, role) VALUES (?, ?, ?);");
+            pstmt.setString(1, "mike");
+            pstmt.setString(2, "qwerty");
+            pstmt.setString(3, "user");
+            pstmt.execute();
+            pstmt.setString(1, "luke");
+            pstmt.setString(2, "asdfgh");
+            pstmt.setString(3, "administrator");
+            pstmt.execute();
             System.out.println("Records in table " + tableName + " added successfully");
         }
         rs.close();
@@ -49,6 +56,7 @@ public class HomeWork {
 
     /**
      * Get login and password by role
+     *
      * @param role
      * @param stmt
      * @param tblName
@@ -57,8 +65,10 @@ public class HomeWork {
     static String[] getLoginPasswd(String role, Statement stmt, String tblName)
             throws SQLException {
         String[] result = new String[2];
-        ResultSet rs = stmt.executeQuery(
-                "SELECT * FROM " + tblName + " WHERE role = '" + role + "';" );
+        PreparedStatement pstmt = connect.prepareStatement(
+                "SELECT * FROM " + tblName + " WHERE role = ?;");
+        pstmt.setString(1, role);
+        ResultSet rs = pstmt.executeQuery();
         while (rs.next()) {
             result[0] = rs.getString("login");
             result[1] = rs.getString("password");
