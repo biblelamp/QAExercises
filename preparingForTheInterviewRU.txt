@@ -1,38 +1,38 @@
-Темы для подготовки к собеседованию:
+РўРµРјС‹ РґР»СЏ РїРѕРґРіРѕС‚РѕРІРєРё Рє СЃРѕР±РµСЃРµРґРѕРІР°РЅРёСЋ:
 
-1. Ссылочные типы данных и примитивы
+1. РЎСЃС‹Р»РѕС‡РЅС‹Рµ С‚РёРїС‹ РґР°РЅРЅС‹С… Рё РїСЂРёРјРёС‚РёРІС‹
     http://pr0java.blogspot.ru/2015/04/java-1.html
 
-2. Преобразование типов (cast)
+2. РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ С‚РёРїРѕРІ (cast)
     http://cybern.ru/java-type-cast.html
     EN https://stackoverflow.com/questions/5289393/casting-variables-in-java
 
-3. Оболочки типов данных (wrapper). Для чего нужны?
+3. РћР±РѕР»РѕС‡РєРё С‚РёРїРѕРІ РґР°РЅРЅС‹С… (wrapper). Р”Р»СЏ С‡РµРіРѕ РЅСѓР¶РЅС‹?
     EN https://stackoverflow.com/a/8916075
 
-4. Переменное число параметров в методе
+4. РџРµСЂРµРјРµРЅРЅРѕРµ С‡РёСЃР»Рѕ РїР°СЂР°РјРµС‚СЂРѕРІ РІ РјРµС‚РѕРґРµ
     EN https://stackoverflow.com/questions/766559/when-do-you-use-varargs-in-java
 
-5. Cтатические члены класса, в каких случаях лучше использовать
+5. CС‚Р°С‚РёС‡РµСЃРєРёРµ С‡Р»РµРЅС‹ РєР»Р°СЃСЃР°, РІ РєР°РєРёС… СЃР»СѓС‡Р°СЏС… Р»СѓС‡С€Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ
     EN https://stackoverflow.com/a/7279918
 
-6. Статический блок, для чего используется
+6. РЎС‚Р°С‚РёС‡РµСЃРєРёР№ Р±Р»РѕРє, РґР»СЏ С‡РµРіРѕ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ
     EN https://stackoverflow.com/questions/2420389/static-initialization-blocks
 
-7. Абстрактный класс и интерфейс. Чем отличаются. default методы в интерфейсе
+7. РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ Рё РёРЅС‚РµСЂС„РµР№СЃ. Р§РµРј РѕС‚Р»РёС‡Р°СЋС‚СЃСЏ. default РјРµС‚РѕРґС‹ РІ РёРЅС‚РµСЂС„РµР№СЃРµ
     EN https://stackoverflow.com/a/22591531
 
-8. Класс Object, методы
+8. РљР»Р°СЃСЃ Object, РјРµС‚РѕРґС‹
     https://habrahabr.ru/post/265373
 
-9. Equals и hashCode, их контракт
+9. Equals Рё hashCode, РёС… РєРѕРЅС‚СЂР°РєС‚
     https://ru.stackoverflow.com/questions/439
 
-10. Рефлексия, Java Reflection API
+10. Р РµС„Р»РµРєСЃРёСЏ, Java Reflection API
      http://www.quizful.net/post/java-reflection-api
      http://java-course.ru/begin/reflection/
 
-11. Exception виды, checked и uncheked
+11. Exception РІРёРґС‹, checked Рё uncheked
      http://java5tutor.info/images/exceptionhierarchy.jpg
 
 12. try-with-resources, AutoCloseable interface
@@ -41,80 +41,82 @@
      EN https://stackoverflow.com/questions/30553139
      EN https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
 
-13. Обобщения, Generics
+13. РћР±РѕР±С‰РµРЅРёСЏ, Generics
      https://neerc.ifmo.ru/wiki/index.php?title=Generics
 
-14. Аннотации. Пример объявления
+14. РђРЅРЅРѕС‚Р°С†РёРё. РџСЂРёРјРµСЂ РѕР±СЉСЏРІР»РµРЅРёСЏ
      https://beginnersbook.com/2014/09/java-annotations/
      EN https://stackoverflow.com/questions/1458535/which-types-can-be-used-for-java-annotation-members
 
-15. Лямбда выражения
+15. Р›СЏРјР±РґР° РІС‹СЂР°Р¶РµРЅРёСЏ
      https://habrahabr.ru/post/224593/
      https://blog.idrsolutions.com/2015/02/java-8-method-references-explained-5-minutes/
 
-16. Способы создания паралельных потоков: Thread и Runnable
+16. РЎРїРѕСЃРѕР±С‹ СЃРѕР·РґР°РЅРёСЏ РїР°СЂР°Р»РµР»СЊРЅС‹С… РїРѕС‚РѕРєРѕРІ: Thread Рё Runnable
      EN https://stackoverflow.com/questions/541487
 
-17. Структуры данных в Java. Стеки, хэши, сеты. Когда какие применяем
+17. РЎС‚СЂСѓРєС‚СѓСЂС‹ РґР°РЅРЅС‹С… РІ Java. РЎС‚РµРєРё, С…СЌС€Рё, СЃРµС‚С‹. РљРѕРіРґР° РєР°РєРёРµ РїСЂРёРјРµРЅСЏРµРј
      https://habrahabr.ru/users/tarzan82/posts/
      https://habrahabr.ru/post/267389/
 
-18. Iterator. Перебор данных в коллекции
+18. Iterator. РџРµСЂРµР±РѕСЂ РґР°РЅРЅС‹С… РІ РєРѕР»Р»РµРєС†РёРё
      https://metanit.com/java/tutorial/5.10.php
      EN https://stackoverflow.com/a/1196612
 
-19. Полиморфизм, last binding
+19. РџРѕР»РёРјРѕСЂС„РёР·Рј, last binding
      https://ru.stackoverflow.com/questions/279518
      EN https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading	
-20. Enum, перечисления
+20. Enum, РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ
      https://habrahabr.ru/post/101280/
      https://neerc.ifmo.ru/wiki/index.php?title=%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F
 
-21. SOAP и REST, в чем отличие
+21. SOAP Рё REST, РІ С‡РµРј РѕС‚Р»РёС‡РёРµ
      https://habrahabr.ru/post/158605/
      https://habrahabr.ru/post/50147/
      EN https://stackoverflow.com/a/19884975
 
-22. Что такое веб-сервис
+22. Р§С‚Рѕ С‚Р°РєРѕРµ РІРµР±-СЃРµСЂРІРёСЃ
      https://habrahabr.ru/post/46374/
      https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D0%B0
 
-23. Что такое xsd-схема
+23. Р§С‚Рѕ С‚Р°РєРѕРµ xsd-СЃС…РµРјР°
      https://habrahabr.ru/post/90696/	
      https://stackoverflow.com/a/2339660
 
-24. Способы вызовы веб-сервисов
-     https://alvinalexander.com/blog/post/java/how-to-call-web-service-from-browser
+24. РЎРїРѕСЃРѕР±С‹ РІС‹Р·РѕРІС‹ РІРµР±-СЃРµСЂРІРёСЃРѕРІ
+     EN https://alvinalexander.com/blog/post/java/how-to-call-web-service-from-browser
 http://info.javarush.ru/eGarmin/2015/03/14/%D0%92%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B-%D0%A8%D0%B0%D0%B3-1-%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%B8-%D0%BA%D0%B0%D0%BA-%D1%81-%D0%BD%D0%B8%D0%BC-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C-.html
 
-25. Способы тестирования windows-приложений
+25. РЎРїРѕСЃРѕР±С‹ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ windows-РїСЂРёР»РѕР¶РµРЅРёР№
      https://habrahabr.ru/post/331292/
      https://github.com/cisco-open-source/qtwebdriver
 
-26. Инструменты автоматизированного тестирования
-     https://www.ibm.com/developerworks/rational/library/04/r-3228/3228.html HP UFT, IBM RFT (код на Java), TestComplete (код на кастрированном JS), WebDriver и его имплементации, REST библиотеки (тот же Rest Assured)
+26. РРЅСЃС‚СЂСѓРјРµРЅС‚С‹ Р°РІС‚РѕРјР°С‚РёР·РёСЂРѕРІР°РЅРЅРѕРіРѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ
+    EN https://www.ibm.com/developerworks/rational/library/04/r-3228/3228.html HP UFT, IBM RFT (РєРѕРґ РЅР° Java), TestComplete (РєРѕРґ РЅР° РєР°СЃС‚СЂРёСЂРѕРІР°РЅРЅРѕРј JS), WebDriver Рё РµРіРѕ РёРјРїР»РµРјРµРЅС‚Р°С†РёРё, REST Р±РёР±Р»РёРѕС‚РµРєРё (С‚РѕС‚ Р¶Рµ Rest Assured)
 
-27. Критерии автоматизированного тестирования: автоматизируем, когда есть устоявшийся функционал, и предполагается частое тестирование в дальнейшем (регресс тесты, например, гонять)
+27. РљСЂРёС‚РµСЂРёРё Р°РІС‚РѕРјР°С‚РёР·РёСЂРѕРІР°РЅРЅРѕРіРѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ: Р°РІС‚РѕРјР°С‚РёР·РёСЂСѓРµРј, РєРѕРіРґР° РµСЃС‚СЊ СѓСЃС‚РѕСЏРІС€РёР№СЃСЏ С„СѓРЅРєС†РёРѕРЅР°Р», Рё РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ С‡Р°СЃС‚РѕРµ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ РІ РґР°Р»СЊРЅРµР№С€РµРј (СЂРµРіСЂРµСЃСЃ С‚РµСЃС‚С‹, РЅР°РїСЂРёРјРµСЂ, РіРѕРЅСЏС‚СЊ)
 
-28. Команды UNIX/Linux в консоли
-     http://faculty.tru.ca/nmora/Frequently%20used%20UNIX%20commands.pdf
+28. РљРѕРјР°РЅРґС‹ UNIX/Linux РІ РєРѕРЅСЃРѕР»Рё
+    EN http://faculty.tru.ca/nmora/Frequently%20used%20UNIX%20commands.pdf
 
-29. Применение JUnit
-     https://stackoverflow.com/questions/20295578
+29. РџСЂРёРјРµРЅРµРЅРёРµ JUnit
+     EN https://stackoverflow.com/questions/20295578
 
-30. Мавен. Работа в консоли, что значат команды, что происходит
-     http://www.apache-maven.ru/
+30. РњР°РІРµРЅ. Р Р°Р±РѕС‚Р° РІ РєРѕРЅСЃРѕР»Рё, С‡С‚Рѕ Р·РЅР°С‡Р°С‚ РєРѕРјР°РЅРґС‹, С‡С‚Рѕ РїСЂРѕРёСЃС…РѕРґРёС‚
+     http://www.apache-maven.ru
+     EN https://maven.apache.org
+     EN https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+     EN https://stackoverflow.com/questions/1089285/maven-run-project
      EN https://eckobar.files.wordpress.com/2007/02/maven-cheatsheet.pdf
-     https://image.slidesharecdn.com/continuous-delivery-with-maven-121002134347-phpapp02/95/continuous-deliverywithmaven-23-728.jpg?cb=1349185837
 
-31. Запуск произвольного Java-класса из консоли. Подключение библиотек	
-     https://stackoverflow.com/questions/18139756
-     https://stackoverflow.com/a/8949442
+31. Р—Р°РїСѓСЃРє РїСЂРѕРёР·РІРѕР»СЊРЅРѕРіРѕ Java-РєР»Р°СЃСЃР° РёР· РєРѕРЅСЃРѕР»Рё. РџРѕРґРєР»СЋС‡РµРЅРёРµ Р±РёР±Р»РёРѕС‚РµРє	
+     EN https://stackoverflow.com/questions/18139756
+     EN https://stackoverflow.com/a/8949442
 
-32. Правка XML средствами Java
-     https://stackoverflow.com/a/31693809
+32. РџСЂР°РІРєР° XML СЃСЂРµРґСЃС‚РІР°РјРё Java
+     EN https://stackoverflow.com/a/31693809
 
-33. MQ-очереди	
+33. MQ-РѕС‡РµСЂРµРґРё	
      http://mqseries.narod.ru/book/webspheremq_1.htm
      http://codingrus.ru/readarticle.php?article_id=2913
 
