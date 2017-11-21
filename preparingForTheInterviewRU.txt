@@ -1,0 +1,122 @@
+Темы для подготовки к собеседованию:
+
+1. Ссылочные типы данных и примитивы
+    http://pr0java.blogspot.ru/2015/04/java-1.html
+
+2. Преобразование типов (cast)
+    http://cybern.ru/java-type-cast.html
+    EN https://stackoverflow.com/questions/5289393/casting-variables-in-java
+
+3. Оболочки типов данных (wrapper). Для чего нужны?
+    EN https://stackoverflow.com/a/8916075
+
+4. Переменное число параметров в методе
+    EN https://stackoverflow.com/questions/766559/when-do-you-use-varargs-in-java
+
+5. Cтатические члены класса, в каких случаях лучше использовать
+    EN https://stackoverflow.com/a/7279918
+
+6. Статический блок, для чего используется
+    EN https://stackoverflow.com/questions/2420389/static-initialization-blocks
+
+7. Абстрактный класс и интерфейс. Чем отличаются. default методы в интерфейсе
+    EN https://stackoverflow.com/a/22591531
+
+8. Класс Object, методы
+    https://habrahabr.ru/post/265373
+
+9. Equals и hashCode, их контракт
+    https://ru.stackoverflow.com/questions/439
+
+10. Рефлексия, Java Reflection API
+     http://www.quizful.net/post/java-reflection-api
+     http://java-course.ru/begin/reflection/
+
+11. Exception виды, checked и uncheked
+     http://java5tutor.info/images/exceptionhierarchy.jpg
+
+12. try-with-resources, AutoCloseable interface
+     http://hasysdev.blogspot.ru/2012/06/try-java-7.html
+     http://info.javarush.ru/translation/2013/08/19/Java-7-try-with-resources.html
+     EN https://stackoverflow.com/questions/30553139
+     EN https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
+
+13. Обобщения, Generics
+     https://neerc.ifmo.ru/wiki/index.php?title=Generics
+
+14. Аннотации. Пример объявления
+     https://beginnersbook.com/2014/09/java-annotations/
+     EN https://stackoverflow.com/questions/1458535/which-types-can-be-used-for-java-annotation-members
+
+15. Лямбда выражения
+     https://habrahabr.ru/post/224593/
+     https://blog.idrsolutions.com/2015/02/java-8-method-references-explained-5-minutes/
+
+16. Способы создания паралельных потоков: Thread и Runnable
+     EN https://stackoverflow.com/questions/541487
+
+17. Структуры данных в Java. Стеки, хэши, сеты. Когда какие применяем
+     https://habrahabr.ru/users/tarzan82/posts/
+     https://habrahabr.ru/post/267389/
+
+18. Iterator. Перебор данных в коллекции
+     https://metanit.com/java/tutorial/5.10.php
+     EN https://stackoverflow.com/a/1196612
+
+19. Полиморфизм, last binding
+     https://ru.stackoverflow.com/questions/279518
+     EN https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading	
+20. Enum, перечисления
+     https://habrahabr.ru/post/101280/
+     https://neerc.ifmo.ru/wiki/index.php?title=%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F
+
+21. SOAP и REST, в чем отличие
+     https://habrahabr.ru/post/158605/
+     https://habrahabr.ru/post/50147/
+     EN https://stackoverflow.com/a/19884975
+
+22. Что такое веб-сервис
+     https://habrahabr.ru/post/46374/
+     https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D0%B0
+
+23. Что такое xsd-схема
+     https://habrahabr.ru/post/90696/	
+     https://stackoverflow.com/a/2339660
+
+24. Способы вызовы веб-сервисов
+     https://alvinalexander.com/blog/post/java/how-to-call-web-service-from-browser
+http://info.javarush.ru/eGarmin/2015/03/14/%D0%92%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B-%D0%A8%D0%B0%D0%B3-1-%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%B8-%D0%BA%D0%B0%D0%BA-%D1%81-%D0%BD%D0%B8%D0%BC-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C-.html
+
+25. Способы тестирования windows-приложений
+     https://habrahabr.ru/post/331292/
+     https://github.com/cisco-open-source/qtwebdriver
+
+26. Инструменты автоматизированного тестирования
+     https://www.ibm.com/developerworks/rational/library/04/r-3228/3228.html HP UFT, IBM RFT (код на Java), TestComplete (код на кастрированном JS), WebDriver и его имплементации, REST библиотеки (тот же Rest Assured)
+
+27. Критерии автоматизированного тестирования: автоматизируем, когда есть устоявшийся функционал, и предполагается частое тестирование в дальнейшем (регресс тесты, например, гонять)
+
+28. Команды UNIX/Linux в консоли
+     http://faculty.tru.ca/nmora/Frequently%20used%20UNIX%20commands.pdf
+
+29. Применение JUnit
+     https://stackoverflow.com/questions/20295578
+
+30. Мавен. Работа в консоли, что значат команды, что происходит
+     http://www.apache-maven.ru/
+     EN https://eckobar.files.wordpress.com/2007/02/maven-cheatsheet.pdf
+     https://image.slidesharecdn.com/continuous-delivery-with-maven-121002134347-phpapp02/95/continuous-deliverywithmaven-23-728.jpg?cb=1349185837
+
+31. Запуск произвольного Java-класса из консоли. Подключение библиотек	
+     https://stackoverflow.com/questions/18139756
+     https://stackoverflow.com/a/8949442
+
+32. Правка XML средствами Java
+     https://stackoverflow.com/a/31693809
+
+33. MQ-очереди	
+     http://mqseries.narod.ru/book/webspheremq_1.htm
+     http://codingrus.ru/readarticle.php?article_id=2913
+
+34. XPath
+     http://www.cheat-sheets.org/saved-copy/Locators_table_1_0_2.pdf
