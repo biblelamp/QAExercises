@@ -2,14 +2,17 @@ import helpers.Point;
 
 public class Main {
     public static void main(String[] args) {
-        Circle circle1 = new Circle(new Point(1,2), 5.2);
-        Circle circle2 = new Circle(new Point(2,3), 3);
-        Square square1 = new Square(6);
-        Square square2 = new Square(8);
+        Circle circle = new Circle(new Point(1,2), 5.2);
+        Square square = new Square(6);
+        Line line1 = new Line(new Point(1, 1), new Point(2, 2));
+        Line line2 = new Line(new Point(-3, 0), new Point(1, 1));
 
-        AbstractShape[] shapes = {circle1, circle2, square1, square2};
+        AbstractShape[] shapes = {circle, square, line1, line2};
         for (AbstractShape shape : shapes) {
             System.out.println(shape);
         }
+        
+        if (line1.equalLength(line2))
+            System.out.println("Длины отрезков равны.");
     }
 }
