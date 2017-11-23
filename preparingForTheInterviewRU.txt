@@ -45,7 +45,8 @@
      https://neerc.ifmo.ru/wiki/index.php?title=Generics
 
 14. Аннотации. Пример объявления
-     https://beginnersbook.com/2014/09/java-annotations/
+    https://habrahabr.ru/post/139736/
+     EN https://beginnersbook.com/2014/09/java-annotations/
      EN https://stackoverflow.com/questions/1458535/which-types-can-be-used-for-java-annotation-members
 
 15. Лямбда выражения
@@ -53,6 +54,7 @@
      https://blog.idrsolutions.com/2015/02/java-8-method-references-explained-5-minutes/
 
 16. Способы создания паралельных потоков: Thread и Runnable
+     https://habrahabr.ru/post/164487/ (!)
      EN https://stackoverflow.com/questions/541487
 
 17. Структуры данных в Java. Стеки, хэши, сеты. Когда какие применяем
@@ -65,7 +67,8 @@
 
 19. Полиморфизм, last binding
      https://ru.stackoverflow.com/questions/279518
-     EN https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading	
+     EN https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading
+
 20. Enum, перечисления
      https://habrahabr.ru/post/101280/
      https://neerc.ifmo.ru/wiki/index.php?title=%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F
