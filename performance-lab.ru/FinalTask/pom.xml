@@ -3,10 +3,10 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>calc</groupId>
-  <artifactId>FinalTask</artifactId>
+  <artifactId>Calc</artifactId>
   <packaging>jar</packaging>
 
-  <version>0.1</version>
+  <version>0.2</version>
   <name>FinalTask</name>
   <url>http://maven.apache.org</url>
 
@@ -19,5 +19,39 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>    
+        <configuration>
+          <mainClass>calc.App</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>calc.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
