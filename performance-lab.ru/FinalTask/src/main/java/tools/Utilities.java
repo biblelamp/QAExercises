@@ -5,7 +5,7 @@ package tools;
  * Utilities for calculation
  *
  * @author Sergey Iryupin
- * @version 0.2 dated Nov 26, 2017
+ * @version 0.2.1 dated Nov 26, 2017
  */
 public class Utilities {
 
@@ -20,13 +20,12 @@ public class Utilities {
      * @return result of division or error message
      */
     public String calculate(String first, String second) {
-        // fix problem with ","
-        first = first.replaceAll(",", ".");
-        second = second.replaceAll(",", ".");
-        Double a = getDouble(first); // get first operand
+        // get first operand
+        Double a = getDouble(first);
         if (a.equals(Double.NaN))
             return ERROR_DIVISIBLE;
-        Double b = getDouble(second); // get second operand
+        // get second operand
+        Double b = getDouble(second);
         if (b.equals(Double.NaN))
             return ERROR_DIVISOR;
         // calculate and return the result
@@ -41,7 +40,8 @@ public class Utilities {
      */
     public Double getDouble(String str) {
         try {
-            return Double.parseDouble(str);
+            // fix problem with ","
+            return Double.parseDouble(str.replaceAll(",", "."));
         } catch (NumberFormatException ex) {
             return Double.NaN;
         }
