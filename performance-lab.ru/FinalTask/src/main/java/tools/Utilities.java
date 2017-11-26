@@ -5,57 +5,56 @@ package tools;
  * Utilities for calculation
  *
  * @author Sergey Iryupin
- * @version 0.1 dated Nov 24, 2017
+ * @version 0.2 dated Nov 26, 2017
  */
 public class Utilities {
 
-    final static String ERROR_DIVISIBLE = "Divisible isn't a number";
-    final static String ERROR_DIVISOR = "Divisor isn't a number";
+    final String ERROR_DIVISIBLE = "Divisible isn't a number";
+    final String ERROR_DIVISOR = "Divisor isn't a number";
 
     /**
      * Calculate the result
      *
-     * @param first     divisible in String
-     * @param second    divisor in String
-     * @return          result of division or error message
+     * @param  first     divisible in String
+     * @param  second    divisor in String
+     * @return result of division or error message
      */
-    public static String calculate(String first, String second) {
-        // check first operand
-        if (!checkDouble(first))
+    public String calculate(String first, String second) {
+        // fix problem with ","
+        first = first.replaceAll(",", ".");
+        second = second.replaceAll(",", ".");
+        Double a = getDouble(first); // get first operand
+        if (a.equals(Double.NaN))
             return ERROR_DIVISIBLE;
-        // check second operand
-        if (!checkDouble(second))
+        Double b = getDouble(second); // get second operand
+        if (b.equals(Double.NaN))
             return ERROR_DIVISOR;
-        // calculate result
-        double a = Double.parseDouble(first);
-        double b = Double.parseDouble(second);
-        double result = divide(a, b);
-        return Double.toString(result);
+        // calculate and return the result
+        return Double.toString(a / b);
     }
 
     /**
-     * Checking the number
+     * Get Double from String
      *
-     * @param str     double in String
-     * @return true if the munber is valid
+     * @param  str     double in String
+     * @return Double if the nunber is valid or Double.NaN if not
      */
-    public static boolean checkDouble(String str) {
+    public Double getDouble(String str) {
         try {
-            double a = Double.parseDouble(str);
-            return true;
+            return Double.parseDouble(str);
         } catch (NumberFormatException ex) {
-            return false;
+            return Double.NaN;
         }
     }
 
     /**
      * Calculate the result of division
      *
-     * @param a     divisible in Double
-     * @param b     divisor in Double
+     * @param  a     divisible in Double
+     * @param  b     divisor in Double
      * @return result of division
      */
-    public static double divide(double a, double b) {
-        return a/b;
+    public double divide(double a, double b) {
+        return a / b;
     }
 }
