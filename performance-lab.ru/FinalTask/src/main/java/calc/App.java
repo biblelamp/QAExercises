@@ -4,16 +4,19 @@ package calc;
  * Java. Final task: homework
  *
  * @author Sergey Iryupin
- * @version 0.1 dated Nov 23, 2017
+ * @version 0.2 dated Nov 26, 2017
  */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import tools.Utilities;
 
 class App extends JFrame implements ActionListener {
 
     final String TITLE_OF_PROGRAM = "Calculator: only division";
+    final Rectangle SIZE = new Rectangle(300, 120);
     JTextField firstNum, secondNum, resultNum;
+    Utilities util;
 
     public static void main( String[] args ) {
         new App();
@@ -22,7 +25,7 @@ class App extends JFrame implements ActionListener {
     App() {
         setTitle(TITLE_OF_PROGRAM);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setBounds(new Rectangle(300, 120));
+        setBounds(SIZE);
         // create all components
         firstNum = new JTextField();
         secondNum = new JTextField();
@@ -42,6 +45,7 @@ class App extends JFrame implements ActionListener {
         //pack();
         setLocationRelativeTo(null); // to the center
         setVisible(true);
+        util = new Utilities();
     }
 
     /**
@@ -49,9 +53,7 @@ class App extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent event) {
-        double first = Double.parseDouble(firstNum.getText());
-        double second = Double.parseDouble(secondNum.getText());
-        double result = first / second;
-        resultNum.setText(Double.toString(result));
+        resultNum.setText(
+            util.calculate(firstNum.getText(), secondNum.getText()));
     }
 }
