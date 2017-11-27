@@ -5,12 +5,12 @@ package tools;
  * Utilities for calculation
  *
  * @author Sergey Iryupin
- * @version 0.2.1 dated Nov 26, 2017
+ * @version 0.2.2 dated Nov 27, 2017
  */
 public class Utilities {
 
-    final String ERROR_DIVISIBLE = "Divisible isn't a number";
-    final String ERROR_DIVISOR = "Divisor isn't a number";
+    final public String ERROR_DIVISIBLE = "Divisible isn't a number";
+    final public String ERROR_DIVISOR = "Divisor isn't a number";
 
     /**
      * Calculate the result
@@ -40,7 +40,7 @@ public class Utilities {
      */
     public Double getDouble(String str) {
         try {
-            // fix problem with ","
+            // incidentally, we solve the problem with ","
             return Double.parseDouble(str.replaceAll(",", "."));
         } catch (NumberFormatException ex) {
             return Double.NaN;
