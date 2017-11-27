@@ -12,7 +12,7 @@ import tools.Utilities;
  * @author Sergey Iryupin
  * @version 0.1 dated Nov 27, 2017
  */
-public class AppTestConvert {
+public class TestConvert {
     private Utilities calc;
 
     @Before

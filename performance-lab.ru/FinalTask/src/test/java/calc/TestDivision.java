@@ -12,7 +12,7 @@ import tools.Utilities;
  * @author Sergey Iryupin
  * @version 0.2 dated Nov 27, 2017
  */
-public class AppTestDivision {
+public class TestDivision {
     private Utilities calc;
 
     @Before
