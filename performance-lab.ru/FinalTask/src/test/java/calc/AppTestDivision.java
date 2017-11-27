@@ -1,18 +1,18 @@
 package calc;
 
-/**
- * Java. Final task: homework
- * Unit test for simple calculator
- *
- * @author Sergey Iryupin
- * @version 0.1 dated Nov 26, 2017
- */
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 import tools.Utilities;
 
-public class AppTest {
+/**
+ * Java. Final task: homework
+ * Unit test for simple calculator (division)
+ *
+ * @author Sergey Iryupin
+ * @version 0.2 dated Nov 27, 2017
+ */
+public class AppTestDivision {
     private Utilities calc;
 
     @Before
@@ -26,12 +26,17 @@ public class AppTest {
     }
 
     @Test
+    public void testDivZero() {
+        Assert.assertEquals(0, calc.divide(0, 2), 0);
+    }
+
+    @Test
     public void testDivByZero() {
         Assert.assertEquals(Double.POSITIVE_INFINITY, calc.divide(4, 0), 0);
     }
- 
+
     @Test
-    public void testDivNaN() {
+    public void testDivZeroByZero() {
         Assert.assertEquals(Double.NaN, calc.divide(0, 0), 0);
     }
 }
