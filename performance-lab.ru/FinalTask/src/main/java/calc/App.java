@@ -1,22 +1,26 @@
 package calc;
 
-/**
- * Java. Final task: homework
- *
- * @author Sergey Iryupin
- * @version 0.2 dated Nov 26, 2017
- */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import tools.Utilities;
-
+/**
+ * Java. Final task: homework
+ *
+ * @author Sergey Iryupin
+ * @version 0.3 dated Nov 27, 2017
+ */
 class App extends JFrame implements ActionListener {
 
     final String TITLE_OF_PROGRAM = "Calculator: only division";
     final Rectangle SIZE = new Rectangle(300, 120);
+    final String FIRST_NUMBER = "firstNum";
+    final String SECOND_NUMBER = "secondNum";
+    final String RESULT_NUMBER = "resultNum";
+    final String BTN_CALCULATION = "calc";
+
     JTextField firstNum, secondNum, resultNum;
-    Utilities util;
+    Utilities utilities;
 
     public static void main( String[] args ) {
         new App();
@@ -28,10 +32,14 @@ class App extends JFrame implements ActionListener {
         setBounds(SIZE);
         // create all components
         firstNum = new JTextField();
+        firstNum.setName(FIRST_NUMBER);
         secondNum = new JTextField();
+        secondNum.setName(SECOND_NUMBER);
         resultNum = new JTextField();
+        resultNum.setName(RESULT_NUMBER);
         resultNum.setEditable(false);
         JButton calc = new JButton(" = ");
+        calc.setName(BTN_CALCULATION);
         calc.addActionListener(this);
         // make panel for all JTextFields()
         JPanel panel = new JPanel();
@@ -45,15 +53,14 @@ class App extends JFrame implements ActionListener {
         //pack();
         setLocationRelativeTo(null); // to the center
         setVisible(true);
-        util = new Utilities();
+        utilities = new Utilities();
     }
 
     /**
      * Listener of events from message field and enter button
      */
-    @Override
     public void actionPerformed(ActionEvent event) {
         resultNum.setText(
-            util.calculate(firstNum.getText(), secondNum.getText()));
+            utilities.calculate(firstNum.getText(), secondNum.getText()));
     }
 }
