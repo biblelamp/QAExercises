@@ -11,7 +11,7 @@ import java.util.List;
  * Page class for testing pages
  *
  * @author Sergey Irupin
- * @version dated Nov 29, 2017
+ * @version 0.1 dated Nov 29, 2017
  */
 public class Page {
     private WebDriver driver;
@@ -47,7 +47,7 @@ public class Page {
            driver.findElement(By.id(id)).click();
     }
 
-    public void clickButton(String xpath, int wait) {
+    public void clickButtonByXpath(String xpath, int wait) {
         driver.findElement(By.xpath(xpath)).click();
         if (wait > 0)
             Tools.sleep(wait);
