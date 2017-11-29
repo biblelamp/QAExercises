@@ -11,7 +11,7 @@ import java.util.List;
  * Page class for testing pages
  *
  * @author Sergey Irupin
- * @version 0.1 dated Nov 29, 2017
+ * @version 0.2 dated Nov 29, 2017
  */
 public class Page {
     private WebDriver driver;
@@ -20,43 +20,51 @@ public class Page {
         this.driver = driver;
     }
 
-    public void maximize() {
+    public Page maximize() {
         driver.manage().window().maximize();
+        return this;
     }
 
-    public void go(String[] steps) {
-        driver.get(steps[0]);
-        for (int i = 1; i < steps.length; i++) {
-            List<WebElement> items = driver.findElements(By.linkText(steps[i]));
-            for (WebElement item : items)
-                try {
-                    item.click();
-                } catch (Exception ex) { }
-        }
+    public Page load(String url) {
+        driver.get(url);
+        return this;
     }
 
-    public void setPriceById(String id, String price) {
+    public Page goByLinkText(String linkText) {
+        List<WebElement> items = driver.findElements(By.linkText(linkText));
+        for (WebElement item : items)
+            try {
+                item.click();
+            } catch (Exception ex) { }
+        return this;
+    }
+
+    public Page setPriceById(String id, String price) {
         driver.findElement(By.id(id)).click();
         driver.findElement(By.id(id)).clear();
         driver.findElement(By.id(id)).sendKeys(price);
+        return this;
     }
 
-    public void selectCheckByXPathAndId(String xpath, String id) {
-        driver.findElement(By.xpath(xpath)).click();
+    public Page selectCheckById(String id) {
+        driver.findElement(By.xpath("//label[@for='" + id + "']")).click();
         if (!driver.findElement(By.id(id)).isSelected())
            driver.findElement(By.id(id)).click();
+        return this;
     }
 
-    public void clickButtonByXpath(String xpath, int wait) {
+    public Page clickButtonByXpath(String xpath, int wait) {
         driver.findElement(By.xpath(xpath)).click();
         if (wait > 0)
             Tools.sleep(wait);
+        return this;
     }
 
-    public void search(String name, String id, String xpath, int wait) {
+    public Page search(String name, String id, String xpath, int wait) {
         driver.findElement(By.id(id)).sendKeys(name);
         driver.findElement(By.xpath(xpath)).click();
         if (wait > 0)
             Tools.sleep(wait);
+        return this;
     }
 }
