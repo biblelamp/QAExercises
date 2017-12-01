@@ -11,7 +11,7 @@ import java.util.List;
  * Page class for testing pages
  *
  * @author Sergey Irupin
- * @version 0.2 dated Nov 29, 2017
+ * @version 0.2.1 dated Dec 01, 2017
  */
 public class Page {
     private WebDriver driver;
@@ -60,11 +60,14 @@ public class Page {
         return this;
     }
 
+    public Page enterSearchText(String text, String id) {
+        driver.findElement(By.id(id)).sendKeys(text);
+        return this;
+    }
+
     public Page search(String name, String id, String xpath, int wait) {
-        driver.findElement(By.id(id)).sendKeys(name);
-        driver.findElement(By.xpath(xpath)).click();
-        if (wait > 0)
-            Tools.sleep(wait);
+        enterSearchText(name, id).
+                clickButtonByXpath(xpath, wait);
         return this;
     }
 }
